@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+
+<body class="dark">
+
+<header class="top-bar">
+
+<h2>Monthly Financial Budget Savings Tracker</h2>
+
+<div>
+<span id="welcome"></span>
+<button onclick="goProfile()">Profile</button>
+</div>
+
+</header>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Select Month & Income</h3>
+
+<select id="month" onchange="loadMonth()">
+
+<option value="">Select Month</option>
+
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+
+</select>
+
+<input type="number" id="income" placeholder="Enter income">
+
+<button onclick="saveIncome()">Save Income</button>
+
+</div>
+
+<div class="card">
+
+<h3>Add Expense</h3>
+
+<input type="date" id="date" min="2026-01-01" max="2026-12-31">
+
+<input type="text" id="category" placeholder="Category">
+
+<input type="number" id="amount" placeholder="Amount">
+
+<select id="payment">
+
+<option value="">Payment Method</option>
+<option>UPI</option>
+<option>Cash</option>
+<option>Card</option>
+
+</select>
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button onclick="addExpense()">Add Expense</button>
+
+</div>
+
+<div class="card">
+
+<h3>Savings Goal</h3>
+
+<input type="number" id="goal" placeholder="Enter saving goal">
+
+<button onclick="saveGoal()">Save Goal</button>
+
+<p>Goal: ₹<span id="goalDisplay">0</span></p>
+
+<p>Amount Needed: ₹<span id="remaining">0</span></p>
+
+</div>
+
+<div class="card">
+
+<h3>Monthly Summary</h3>
+
+<p>Total Expense: ₹<span id="total">0</span></p>
+
+<p>Savings: ₹<span id="savings">0</span></p>
+
+<p id="alert" class="alert"></p>
+
+<button onclick="exportExcel()">Download Excel</button>
+
+<button onclick="resetMonth()" class="danger">Delete Month Report</button>
+
+</div>
+
+<div class="card wide">
+
+<h3>Expense Analytics</h3>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<div class="card">
+
+<h3>Calculator</h3>
+
+<input type="text" id="calcDisplay" readonly>
+
+<div class="calc-grid">
+
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+<button onclick="press('/')">÷</button>
+
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+<button onclick="press('*')">×</button>
+
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+<button onclick="press('-')">−</button>
+
+<button onclick="press('0')">0</button>
+<button onclick="press('.')">.</button>
+<button onclick="calculateResult()">=</button>
+<button onclick="press('+')">+</button>
+
+<button onclick="clearCalc()" class="wide-btn">Clear</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Profile</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="dark">
+
+<header class="top-bar">
+
+<h2>My Profile</h2>
+
+<button onclick="back()">Back</button>
+
+</header>
+
+<div class="profile-card">
+
+<img id="profilePic" class="profile-pic">
+
+<h2 id="profileName"></h2>
+
+<input type="file" accept="image/*" onchange="uploadPic(event)">
+
+<input type="text" id="mobile" placeholder="Mobile Number">
+
+<textarea id="feedback" placeholder="Bio"></textarea>
+
+<button onclick="saveProfile()">Save Profile</button>
+
+</div>
+
+<script>
+
+profileName.innerText = localStorage.getItem("username");
+
+const pic = localStorage.getItem("profilePic");
+
+if(pic) profilePic.src = pic;
+
+mobile.value = localStorage.getItem("mobile") || "";
+
+feedback.value = localStorage.getItem("feedback") || "";
+
+function uploadPic(e){
+
+const r = new FileReader();
+
+r.onload = () => {
+
+localStorage.setItem("profilePic",r.result);
+
+profilePic.src = r.result;
+
+};
+
+r.readAsDataURL(e.target.files[0]);
+
+}
+
+function saveProfile(){
+
+localStorage.setItem("mobile",mobile.value);
+
+localStorage.setItem("feedback",feedback.value);
+
+alert("Profile saved");
+
+}
+
+function back(){
+
+window.location.href="dashboard.html";
+
+}
+
+</script>
+
+</body>
+</html>
