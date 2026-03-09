@@ -1,28 +1,33 @@
+/* CO2: Universal selector */
 *{
 box-sizing:border-box;
 }
 
+/* CO2: CSS class selector + color styling */
 body.dark{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-color:white;
+margin:0;                     /* CO1: Spacing property */
+font-family:Arial;            /* CO2: Typography */
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e); /* CO2: CSS function & color representation */
+color:white;                  /* CO2: Text color styling */
 }
 
+/* CO2: Class selector */
 .logo{
 width:80px;
-margin-bottom:15px;
+margin-bottom:15px;           /* CO1: Spacing property */
 }
 
+/* CO2: Layout styling */
 .login-container{
 width:350px;
-margin:120px auto;
+margin:120px auto;            /* CO1: Margin spacing */
 text-align:center;
-padding:25px;
-background:rgba(255,255,255,0.1);
-border-radius:16px;
+padding:25px;                 /* CO1: Padding */
+background:rgba(255,255,255,0.1); /* CO2: Color representation (RGBA) */
+border-radius:16px;           /* CO2: Border styling */
 }
 
+/* CO2: Group selector */
 input,textarea,button,select{
 width:100%;
 padding:10px;
@@ -31,50 +36,59 @@ border-radius:8px;
 border:none;
 }
 
+/* CO2: Styling form elements */
 input,textarea,select{
-background:#1e1e3f;
+background:#1e1e3f;           /* CO2: Hex color */
 color:white;
 }
 
+/* CO2: Button styling */
 button{
-background:linear-gradient(90deg,#b06cff,#ff6ec7);
+background:linear-gradient(90deg,#b06cff,#ff6ec7); /* CO2: Gradient function */
 color:white;
-cursor:pointer;
+cursor:pointer;               /* CO2: Interactive styling */
 }
 
+/* CO2: Flexbox layout */
 .top-bar{
 padding:15px 30px;
-display:flex;
+display:flex;                 /* CO2: Flexbox layout */
 justify-content:space-between;
 background:rgba(0,0,0,0.3);
 }
 
+/* CO2: CSS Grid layout */
 .grid{
 padding:25px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+display:grid;                 /* CO2: CSS Grid */
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* CO2: Responsive grid */
 gap:20px;
 }
 
+/* CO2: Card UI styling */
 .card{
 background:rgba(255,255,255,0.1);
 padding:20px;
 border-radius:15px;
 }
 
+/* CO2: Grid column spanning */
 .card.wide{
 grid-column:span 2;
 }
 
+/* CO2: Alert text styling */
 .alert{
 color:#ff8080;
 font-weight:bold;
 }
 
+/* CO2: Danger button styling */
 .danger{
 background:#ff4d4d;
 }
 
+/* CO2: Profile layout styling */
 .profile-card{
 width:320px;
 margin:80px auto;
@@ -84,17 +98,19 @@ padding:20px;
 border-radius:16px;
 }
 
+/* CO2: Image styling */
 .profile-pic{
 width:120px;
 height:120px;
-border-radius:50%;
-object-fit:cover;
+border-radius:50%;           /* CO2: Shape styling */
+object-fit:cover;            /* CO2: Image fitting */
 }
 
+/* CO2: Calculator display styling */
 #calcDisplay{
 width:100%;
 padding:12px;
-font-size:18px;
+font-size:18px;              /* CO2: Typography */
 margin-bottom:10px;
 background:#1e1e3f;
 color:white;
@@ -102,12 +118,14 @@ border-radius:8px;
 border:none;
 }
 
+/* CO2: Grid layout for calculator */
 .calc-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(4,1fr);  /* CO2: CSS Grid */
 gap:8px;
 }
 
+/* CO2: Button styling inside calculator */
 .calc-grid button{
 padding:12px;
 font-size:16px;
@@ -118,6 +136,7 @@ color:white;
 cursor:pointer;
 }
 
+/* CO2: Grid column spanning */
 .wide-btn{
 grid-column:span 4;
 background:#ff4d4d;
