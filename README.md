@@ -48,7 +48,7 @@ Cloud storage for saving financial records
 Yearly financial reports and analytics
 Mobile responsive design for better accessibility
 
-Author - BODDAPATI HIMAVANTH SAI GANESH
 JavaScript – Used for implementing the application logic and calculations
-
 SheetJS (XLSX Library) – Used for exporting financial data into Excel format
+
+Author - BODDAPATI HIMAVANTH SAI GANESH
