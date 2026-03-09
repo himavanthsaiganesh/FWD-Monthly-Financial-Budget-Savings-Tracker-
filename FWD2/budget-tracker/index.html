@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- CO1: HTML Document Structure -->
 <title>Login | Budget Tracker</title>
+
+<!-- CO5: Optimize page load using external CSS file -->
 <link rel="stylesheet" href="style.css">
+
 </head>
 
+<!-- CO2: Semantic structure + CSS class for theme management -->
 <body class="dark">
 
+<!-- CO2: Structured layout container -->
 <div class="login-container">
 
+<!-- CO2: Media tag usage (image element) -->
 <img src="assets/logo.png" class="logo">
 
+<!-- CO1: Heading tag -->
 <h2>Monthly Financial Budget<br>Savings Tracker</h2>
 
+<!-- CO2: HTML Form input elements -->
+<!-- CO2: Advanced input attributes like placeholder -->
 <input type="text" id="username" placeholder="Username">
+
+<!-- CO2: Different input type (password) -->
 <input type="password" id="password" placeholder="Password">
 
+<!-- CO4: Event handling using onclick -->
 <button onclick="login()">Login</button>
 
 </div>
 
 <script>
 
+// CO3: JavaScript Function
 function login(){
 
+// CO4: DOM Manipulation - accessing elements using getElementById
 const user = document.getElementById("username").value;
 const pass = document.getElementById("password").value;
 
+// CO3: Conditional statements
 if(!user || !pass){
+
+// CO4: Browser interaction
 alert("Please fill all fields");
 return;
 }
 
+// CO4: Browser Storage - localStorage usage
 localStorage.setItem("username",user);
 
+// CO4: DOM navigation / page redirection
 window.location.href="dashboard.html";
 
 }
