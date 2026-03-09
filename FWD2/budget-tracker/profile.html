@@ -2,76 +2,101 @@
 <html>
 <head>
 
+<!-- CO1: HTML Document Structure -->
 <title>Profile</title>
 
+<!-- CO5: External CSS for page styling -->
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+<!-- CO2: CSS class used for theme/layout styling -->
 <body class="dark">
 
+<!-- CO2: Structured content using header tag (semantic tag) -->
 <header class="top-bar">
 
+<!-- CO1: Heading tag -->
 <h2>My Profile</h2>
 
+<!-- CO4: Event handling using onclick -->
 <button onclick="back()">Back</button>
 
 </header>
 
+<!-- CO2: Structured container for layout -->
 <div class="profile-card">
 
+<!-- CO2: Media tag (image element) -->
 <img id="profilePic" class="profile-pic">
 
+<!-- CO4: DOM manipulation target element -->
 <h2 id="profileName"></h2>
 
+<!-- CO2: File input type -->
 <input type="file" accept="image/*" onchange="uploadPic(event)">
 
+<!-- CO2: Text input field -->
 <input type="text" id="mobile" placeholder="Mobile Number">
 
+<!-- CO2: Textarea form element -->
 <textarea id="feedback" placeholder="Bio"></textarea>
 
+<!-- CO4: Event handling -->
 <button onclick="saveProfile()">Save Profile</button>
 
 </div>
 
 <script>
 
+// CO4: Browser Storage (localStorage) + DOM manipulation
 profileName.innerText = localStorage.getItem("username");
 
+// CO4: Storage retrieval
 const pic = localStorage.getItem("profilePic");
 
+// CO4: Conditional statement
 if(pic) profilePic.src = pic;
 
+// CO4: Storage retrieval with default value
 mobile.value = localStorage.getItem("mobile") || "";
-
 feedback.value = localStorage.getItem("feedback") || "";
 
+// CO3: JavaScript function
 function uploadPic(e){
 
+// CO4: FileReader API (handling user input dynamically)
 const r = new FileReader();
 
+// CO4: Callback function and event handling
 r.onload = () => {
 
+// CO4: Browser storage
 localStorage.setItem("profilePic",r.result);
 
+// CO4: DOM manipulation
 profilePic.src = r.result;
 
 };
 
+// CO4: Reading uploaded file
 r.readAsDataURL(e.target.files[0]);
 
 }
 
+// CO3: JavaScript function
 function saveProfile(){
 
+// CO4: Storing user input in browser storage
 localStorage.setItem("mobile",mobile.value);
-
 localStorage.setItem("feedback",feedback.value);
 
+// CO4: Browser interaction
 alert("Profile saved");
 
 }
 
+// CO4: Page navigation
 function back(){
 
 window.location.href="dashboard.html";
